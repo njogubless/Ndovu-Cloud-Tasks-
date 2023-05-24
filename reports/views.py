@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Department, Report
-from .forms import ReportForm
+from report_system.forms import ReportForm
 
 def home(request):
     departments = Department.objects.all()
