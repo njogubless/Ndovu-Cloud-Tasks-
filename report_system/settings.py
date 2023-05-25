@@ -77,13 +77,9 @@ WSGI_APPLICATION = 'report_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'report_db',
-        'USER': 'njogubless',
-        'PASSWORD': 'Bless2000',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
 
 
 # Password validation

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Department, Report
-from report_system.forms import ReportForm
+from .forms import ReportForm
 from django.shortcuts import render, HttpResponse
 
 def home(request):
@@ -24,5 +24,5 @@ def create_report(request):
 
 
 # Create your views here.
-def home_view(request):
-    return HttpResponse("Welcome to the home page")
+#def home_view(request):
+ #   return HttpResponse("Welcome to the home page")
