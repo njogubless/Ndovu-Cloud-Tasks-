@@ -14,21 +14,21 @@ class ManagerTest(TestCase):
 
 class ProjectTest(TestCase):
     def setUp(self):
-        self.project1 = Project(name='repoertsystem',manager='Paul')
+        self.project = Project(name='repoertsystem',manager='Paul')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.project1,Project))
+        self.assertTrue(isinstance(self.project,Project))
 
 class EmployeeTest(TestCase):
     def setUp(self):
-        self.employee1 = Employee(name='Emmanuel',department ='Marketing')
+        self.employee = Employee(name='Emmanuel',department ='Marketing')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.employee1,Employee))
+        self.assertTrue(isinstance(self.employee,Employee))
 
 class TechnicianTest(TestCase):
     def setUp(self):
-        self.technician1 = Technician(name='Joel',department ='ICT ')
+        self.technician = Technician(name='Joel',department ='ICT ')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.technician,Technician))
@@ -36,23 +36,23 @@ class TechnicianTest(TestCase):
 
 class AttendanceTest(TestCase):
     def setUp(self):
-        self.attendance1 = Attendance(employee='Joel',date='May 22nd 2023')
+        self.attendance = Attendance(employee='Joel',date='May 22nd 2023')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.attendance1,Attendance))
+        self.assertTrue(isinstance(self.attendance,Attendance))
 
 
 class AccountantTest(TestCase):
     def setUp(self):
-        self.accountant1= Accountant(name=' Martin',department='Finance')
+        self.accountant = Accountant(name=' Martin',department='Finance')
         
         def test_instance(self):
-            self.assterTrue(isinstance(self.accountant1,Accountant))
+            self.assterTrue(isinstance(self.accountant,Accountant))
 
 
 class ExpenseTest(TestCase):
     def setup(self):
-        self.expense1= Expense(description='taxes',amount='50,000')
+        self.expense= Expense(description='taxes',amount='50,000')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.expense,Expense))
