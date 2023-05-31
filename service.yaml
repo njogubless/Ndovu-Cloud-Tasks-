@@ -1,0 +1,11 @@
+kind: Service
+metadata:
+  name: report-system-service
+spec:
+  selector:
+    app: report-system
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
