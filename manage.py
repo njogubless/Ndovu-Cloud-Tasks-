@@ -2,6 +2,8 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+
 
 
 def main():
@@ -18,5 +20,10 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    if 'runserver' in sys.argv:
+        # Start the HTTP server on port 8000
+        httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
+        httpd.serve_forever()
+    else:
+        management.execute_from_command_line()

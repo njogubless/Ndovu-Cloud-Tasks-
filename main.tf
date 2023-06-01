@@ -1,11 +1,11 @@
 # Configure the DigitalOcean provider
 provider "digitalocean" {
-  token = "dop_v1_0b61b0ea9f0837e921396a2d67c3f7cf23be3a17e5e4daf39e275ff4786ee24a"
+  token = "dop_v1_7532d90fc4dafdf34bcc2f7fdecf55eea6077ed5c74972f717bb6e714e7f37d2"
 }
 
 # Create a new droplet
-resource "digitalocean_droplet" "example" {
-  image  = "Ubuntu 22.04 (LTS) x64"
+resource "digitalocean_droplet" "web" {
+  image  = "ubuntu-22-04-x64"
   name   = "Bless"
   region = "TOR1"
   size   = "s-1vcpu-1gb"

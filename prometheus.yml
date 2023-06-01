@@ -17,6 +17,14 @@ scrape_configs:
   - job_name: "prometheus"
 
     # metrics_path defaults to '/metrics'
+    REQUEST_TIME = Summary('request_processing_seconds', 'Time spent processing request')
+
+    @app.route('/')
+@REQUEST_TIME.time()
+def index():
+    # Your code here
+    return 'Hello, World!'
+
     # scheme defaults to 'http'.
 
     static_configs:
