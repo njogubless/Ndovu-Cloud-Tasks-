@@ -1,20 +1,33 @@
-iVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-python-app
+  name: bb-demo
+  namespace: default
 spec:
-  replicas: 3  # Number of replicas you want to run
+  replicas: 1
   selector:
     matchLabels:
-      app: my-python-app
+      bb: web
   template:
     metadata:
       labels:
-        app: my-python-app
+        bb: web
     spec:
       containers:
-        - name: my-python-app
-          image: njogubless1/my-python-app # The Docker image for your web application
-          ports:
-            - containerPort: 80  # The port on which your web application listens
-          # Additional configuration for environment variables, volumes, etc.
+      - name: my-python-app
+        image: njogubless1/my-python-app
+        imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bb-entrypoint
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    bb: web
+  ports:
+  - port: 3000
+    targetPort: 3000
+    nodePort: 30001
