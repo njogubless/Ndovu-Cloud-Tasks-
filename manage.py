@@ -4,8 +4,6 @@ import os
 import sys
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
-
-
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'report_system.settings')
