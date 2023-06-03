@@ -33,11 +33,15 @@ from django.db import models
 class Employee(models.Model):
     name = models.CharField(max_length=100)
     department = models.CharField(max_length=100)
-    
-
+   
+ 
 class Attendance(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     date = models.DateField()
+
+employee=Employee(name="Joel")
+employee.save()
+print("employee Name;",employee.name)
     
 
 from django.db import models
