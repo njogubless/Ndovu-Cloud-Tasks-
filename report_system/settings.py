@@ -125,6 +125,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-if 'runserver' in sys.argv:
+#if 'runserver' in sys.argv:
     # Start the HTTP server on port 8000
-    start_http_server(8000)
+ #   start_http_server(8000)
