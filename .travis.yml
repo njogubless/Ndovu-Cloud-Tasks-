@@ -13,7 +13,9 @@ before_install:
 
 script: 
   - python manage.py test
-  language: python
+
+language: python
+
 python:
   - "3.10.6"
 
@@ -21,7 +23,7 @@ services:
   - docker
 env:
   global:
-    - DOCKER_IMAGE_NAME=njogubless1/my-python-app 
+  - DOCKER_IMAGE_NAME=njogubless1/my-python-app 
 
 before_script:
   - docker build -t njogubless1/my-python-app 
