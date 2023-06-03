@@ -24,4 +24,7 @@ if __name__ == "__main__":
         httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
         httpd.serve_forever()
     else:
-        management.execute_from_command_line()
+       from django.core.management import execute_from_command_line
+       execute_from_command_line()
+     
+

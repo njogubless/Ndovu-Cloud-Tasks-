@@ -4,7 +4,7 @@ set -e
 
 # Step 1: SSH into the DigitalOcean droplet
 echo "Connecting to the DigitalOcean droplet..."
-ssh -i deploy_key.pem $DEPLOY_USER@$DEPLOY_HOST << 'EOF'
+ssh -i deploy_key.pem $root@$138.197.149.47 << 'EOF'
 
   # Step 2: Navigate to the application directory
   cd /path/to/your/application
