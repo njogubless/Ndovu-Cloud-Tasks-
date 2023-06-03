@@ -1,31 +1,12 @@
-arch: amd64          # optional, this is default, routes to a full VM
-os: linux            # optional, this is default
-dist: bionic         # or bionic | xenial | trusty | precise with xenial as default
+dist: bionic
 addons:
   apt:
     sources:
-      - deadsnakes 
-      - sourceline: 'deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse'
+      - deadsnakes
     packages:
-      - "3.7"
-      before install:
-      -sudo apt-get update
-      -sudo apt purge python2.7-minimal
-      -sudo apt-get install python3 python3-pip python3-setuptools
-      -pip3 install ---uprade pip
-
-language: -python
-python:
- - "3.6.5"
-install: 
- - pip install -r requirements.txt
-script: 
- - python -m unittest discover
-
- deploy:
-  provider: script
-  skip_cleanup: true
-  script: bash deploy.sh
-  on:
-    branch: <Master>
-    
+      - python3.7
+before_install:
+  - sudo apt-get update
+  - sudo apt purge python2.7-minimal
+  - sudo apt-get install python3 python3-pip python3-setuptools
+  - pip3 install --upgrade pip
