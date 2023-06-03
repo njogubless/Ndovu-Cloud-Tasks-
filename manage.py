@@ -18,13 +18,11 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-if __name__ == "__main__":
-    if 'runserver' in sys.argv:
-        # Start the HTTP server on port 8000
-        httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
-        httpd.serve_forever()
-    else:
-       from django.core.management import execute_from_command_line
-       execute_from_command_line()
-     
-
+#if __name__ == "__main__":
+    #if 'runserver' in sys.argv:
+         # Start the HTTP server on port 8000
+         #httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
+         #httpd.serve_forever()
+    #else:
+          #from django.core.management import execute_from_command_line
+          #execute_from_command_line
