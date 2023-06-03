@@ -2,7 +2,6 @@ import datetime
 from django.test import TestCase
 from .models import Accountant, Attendance, Employee, Expense, Manager, Project, Technician 
 
-
 # Create your tests here.
 class ManagerTest(TestCase):
     def setUp(self):
