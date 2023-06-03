@@ -2,25 +2,25 @@
 
 set -e
 
-# Step 1: SSH into the DigitalOcean droplet
-echo "Connecting to the DigitalOcean droplet..."
-ssh -i deploy_key.pem $root@$138.197.149.47 << 'EOF'
+# Stop the running container (if any)
+#docker stop my-container || true
 
-  # Step 2: Navigate to the application directory
-  cd /path/to/your/application
+# Remove the stopped container (if any)
+#docker rm my-container || true
 
-  # Step 3: Pull the latest code from the repository
-  echo "Pulling the latest code..."
-  git pull
+# Build the Docker image
+docker build -t njogubless1/my-python-app .
 
-  # Step 4: Install/update dependencies
-  echo "Installing/updating dependencies..."
-  pip install -r requirements.txt
+# Run the Docker container in detached mode
+docker run --name my-container njogubless1/my-python-app
 
-  # Step 5: Restart the application
-  echo "Restarting the application..."
-  sudo systemctl restart your_application.service
+# Wait for the container to start up (you may need to adjust the duration based on your application)
+#sleep 10
 
-EOF
+# Run pytest within the running container
+docker exec my-container pytest
 
-echo "Deployment completed successfully!"
+# Stop and remove the container after the tests
+docker stop my-container
+docker rm my-container
+

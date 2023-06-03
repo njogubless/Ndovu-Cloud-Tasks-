@@ -13,3 +13,26 @@ before_install:
 
 script: 
   - python manage.py test
+  language: python
+python:
+  - "3.10.6"
+
+services:
+  - docker
+env:
+  global:
+    - DOCKER_IMAGE_NAME=njogubless1/my-python-app 
+
+before_script:
+  - docker build -t njogubless1/my-python-app 
+  - docker run -d --name my-container njogubless1/my-python-app 
+
+
+script:
+  - pytest
+
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh
+  on:
+    branch: main
