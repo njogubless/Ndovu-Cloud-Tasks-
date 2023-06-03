@@ -39,9 +39,12 @@ class Attendance(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     date = models.DateField()
 
-employee=Employee(name="Joel")
-employee.save()
-print("employee Name;",employee.name)
+#employee=Employee(name="Joel")
+#employee.save()
+#print("Joel;",employee.name)
+
+#attendance = Attendance(employee=employee, date="2023-06-03")
+#attendance.save()
     
 
 from django.db import models

@@ -13,7 +13,8 @@ class ManagerTest(TestCase):
 
 class ProjectTest(TestCase):
     def setUp(self):
-        self.project = Project(name='repoertsystem',manager='Paul')
+        manager=Manager.objects.create(name="Paul")
+        self.project = Project(name='reportsystem',manager=manager)
 
     def test_instance(self):
         self.assertTrue(isinstance(self.project,Project))
@@ -35,7 +36,9 @@ class TechnicianTest(TestCase):
 
 class AttendanceTest(TestCase):
     def setUp(self):
-        self.attendance = Attendance(employee='Joel',date='May 22nd 2023')
+        employee=Employee.objects.create(name="Joel")
+
+        self.attendance = Attendance(employee=employee,date="2023-06-03")
 
     def test_instance(self):
         self.assertTrue(isinstance(self.attendance,Attendance))
@@ -50,7 +53,7 @@ class AccountantTest(TestCase):
 
 
 class ExpenseTest(TestCase):
-    def setup(self):
+    def setUp(self):
         self.expense= Expense(description='taxes',amount='50,000')
 
     def test_instance(self):
