@@ -7,7 +7,7 @@ addons:
       - deadsnakes 
       - sourceline: 'deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse'
     packages:
-      - 3.7
+      - "3.7"
       before install:
       -sudo apt-get update
       -sudo apt purge python2.7-minimal
