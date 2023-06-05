@@ -3,18 +3,15 @@ language: python
 python:
   - "3.10.6"
 
-before_script: pip install -r requirements.txt
-
-script:
-  - python manage.py test
-
 services:
   - docker
 
-before_script:
+before_script: 
+  - pip install -r requirements.txt
   - pip install docker
 
 script:
+  - python manage.py test
   - docker build -t my-django-app .
   - docker run -d --name my-app-container my-django-app python manage.py runserver 0.0.0.0:8000
 
@@ -22,4 +19,4 @@ deploy:
   provider: script
   script: docker stop my-app-container
   on:
-    branch: master
+  branch: master

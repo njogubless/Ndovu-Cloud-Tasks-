@@ -1,5 +1,5 @@
-#nsible==8.0.0
-#ansible-core==2.15.0
+ansible==8.0.0
+ansible-core==2.15.0
 asgiref==3.7.1
 cffi==1.15.1
 cryptography==41.0.0
