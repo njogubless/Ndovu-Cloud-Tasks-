@@ -1,26 +1,14 @@
+
 #!/bin/bash
 
-set -e
+# Stop and remove any existing containers
+docker-compose down
 
-# Stop the running container (if any)
-#docker stop my-container || true
+# Build and start the containers
+docker-compose up -d --build
 
-# Remove the stopped container (if any)
-#docker rm my-container || true
+# Perform any additional deployment steps here
+# e.g., migrate the database, collect static files, etc.
 
-# Build the Docker image
-docker build -t njogubless1/my-python-app .
-
-# Run the Docker container in detached mode
-docker run --name my-container njogubless1/my-python-app
-
-# Wait for the container to start up (you may need to adjust the duration based on your application)
-#sleep 10
-
-# Run pytest within the running container
-docker exec my-container pytest
-
-# Stop and remove the container after the tests
-docker stop my-container
-docker rm my-container
-
+# Restart the application container
+docker-compose restart web

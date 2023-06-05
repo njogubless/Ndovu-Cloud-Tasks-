@@ -1,0 +1,8 @@
+language: python
+python:
+  - "3.10.6"
+services:
+  django:
+  image: njogubless1/my-python-app 
+  build: 
+  ports: "8000:8000"
