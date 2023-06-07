@@ -1,5 +1,4 @@
-FROM python:3.10.6
-
+FROM python:3.8
 WORKDIR /app
 
 COPY ./requirements.txt requirements.txt
@@ -20,4 +19,4 @@ VOLUME [ "/app/data" ]
 
 EXPOSE 8080
 
-ENTRYPOINT [ "python3","manage.py","runserver"]
+ENTRYPOINT [ "python3","manage.py","ruserver"]
