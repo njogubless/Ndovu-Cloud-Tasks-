@@ -71,9 +71,3 @@ http {
         }
     }
 }
-
-~~~
-I have not been successful to connect the appliaction to a host server with this configuration file. 
-
-
-
