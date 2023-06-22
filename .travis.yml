@@ -18,5 +18,5 @@ script:
 deploy:
   provider: script
   script: docker stop my-app-container
-  on:
-  branch: master
+  on: 
+    branch: master
