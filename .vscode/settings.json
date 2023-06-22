@@ -2,5 +2,6 @@
     "git.ignoreLimitWarning": true,
     "python.analysis.extraPaths": [
         "./reports"
-    ]
+    ],
+    "ansible.python.interpreterPath": "/bin/python3"
 }
