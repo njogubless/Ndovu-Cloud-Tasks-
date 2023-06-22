@@ -1,0 +1,4 @@
+{% for department in departments %}
+  <a href="{% url 'department_report' department.id %}">{{ department.name }}</a>
+{% endfor %}
+hello 

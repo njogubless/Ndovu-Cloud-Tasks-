@@ -1,0 +1,11 @@
+version: '3'
+services:
+  service_name:
+    image: image_name:tag
+    restart: always
+    ports:
+      - host_port:container_port
+    volumes:
+      - host_path:container_path
+    environment:
+      - ENV_VARIABLE=value

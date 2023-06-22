@@ -1,0 +1,22 @@
+dist: jammy 
+language: python
+python:
+  - "3.8"
+
+services:
+  - docker
+
+before_script: 
+  - pip install -r requirements.txt
+  - pip install docker
+
+script:
+  - python manage.py test
+  - docker build -t my-django-app .
+  - docker run -d --name my-app-container my-django-app python manage.py runserver 0.0.0.0:8000
+
+deploy:
+  provider: script
+  script: docker stop my-app-container
+  on:
+  branch: master
