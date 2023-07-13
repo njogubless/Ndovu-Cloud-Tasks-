@@ -11,7 +11,7 @@ before_script:
   - pip install docker
 
 script:
-  - python manage.py test
+  - python run_manage.py
   - docker build -t my-django-app .
   - docker run -d --name my-app-container my-django-app python manage.py runserver 0.0.0.0:8000
 
